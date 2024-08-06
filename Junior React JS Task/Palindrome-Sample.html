@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome</title>
+
+    <script type="text/javascript">
+      var arr1 = ["racecar", "balloon", "hockey", "hannah", "rainbow", "civic"];
+      var arr2 = []; // arr2 should be filled with the result containing true if the work is word palindrome or otherwise.
+
+      console.log(findPalindromes(arr1)); // function call
+
+      //   console.log(arr2); // Expected output: [true, false, false, true, false, true]
+
+      /** Function responsible to fill arr2 with results of each text found as palindrome with true or false
+       */
+
+      function findPalindromes(first_arr) {
+        let firstArr = first_arr.map((word) => {
+          let LowerCase = word.toLowerCase();
+
+          let reverseStr = "";
+
+          for (let i = word.length - 1; i >= 0; i--) {
+            reverseStr += word[i];
+          }
+          arr2.push(reverseStr);
+        });
+
+        // console.log(first_arr);
+
+        // console.log(arr2);
+
+        // console.log(arr2);
+
+        let answerArr = [];
+
+        for (let j = 0; j < first_arr.length; j++) {
+          if (first_arr[j] === arr2[j]) {
+            // console.log(arr2[j]);
+            // console.log(firstArr[j]);
+            answerArr.push(true);
+          } else {
+            // arr2.push(false);
+            answerArr.push(false);
+          }
+        }
+
+        // console.log(answerArr);
+
+        return answerArr;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
